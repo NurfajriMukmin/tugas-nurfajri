@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inputkan Nilai</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f1c6;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .container {
+            background-color: #fef9e7;
+            border: 1px solid #d5d5d5;
+            padding: 20px;
+            width: 300px;
+            margin: 0 auto;
+            border-radius: 5px;
+        }
+        .result {
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            padding: 10px;
+            margin-bottom: 10px;
+            display: none; 
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="hasil" class="result"></div> <!-- Pindahkan hasil ke atas -->
+        <h3>Penginputan Nilai</h3>
+        <input type="number" id="inputNilai" placeholder="Masukkan Nilai">
+        <button id="cekNilai">Nilai</button>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $('#cekNilai').click(function () {
+                const nilai = parseInt($('#inputNilai').val());
+                const hasil = $('#hasil');
+
+                if (isNaN(nilai)) {
+                    hasil.text('Masukkan nilai yang valid!').css({
+                        backgroundColor: 'red',
+                        display: 'block',
+                    });
+                    return;
+                }
+
+                if (nilai >= 85 && nilai <=100) {
+                    hasil.text('Mendapatkan Nilai A').css({
+                        backgroundColor: 'green',
+                        display: 'block',
+                    });
+                } else if (nilai >= 75 && nilai <= 84) {
+                    hasil.text('Mendapatkan Nilai B+').css({
+                        backgroundColor: 'orange',
+                        display: 'block',
+                    });
+                } else if (nilai >= 60 && nilai <= 74) {
+                    hasil.text('Mendapatkan Nilai C+').css({
+                        backgroundColor: 'yellow',
+                        color: 'black', 
+                        display: 'block',
+                    });
+                } else if (nilai >= 0 && nilai <= 59) {
+                    hasil.text('Mendapatkan Nilai E').css({
+                        backgroundColor: 'red',
+                        display: 'block',
+                    });
+                } else {
+                    hasil.text('Nilai tidak sesuai kriteria!').css({
+                        backgroundColor: 'gray',
+                        display: 'block',
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

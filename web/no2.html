@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penginputan Nilai</title>
+
+    <!-- Tambahkan jQuery dari CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Link ke file JavaScript eksternal -->
+    <script src="no2.js" defer></script>
+
+    <!-- CSS untuk styling -->
+    <style>
+        body {
+            background-color: #f5deb3;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .container {
+            width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5deb3;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+        }
+
+        input[type="text"] {
+            width: 80px;
+            padding: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 5px 10px;
+            font-size: 16px;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 38px;
+            font-weight: bold;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .green {
+            background-color: green;
+            color: white;
+        }
+
+        .orange {
+            background-color: orange;
+            color: white;
+        }
+
+        .yellow {
+            background-color: yellow;
+            color: black;
+        }
+
+        .red {
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="result"></div>
+
+    <div class="container">
+        <h2>Penginputan Nilai</h2>
+        <label for="nilai">Inputkan Nilai</label>
+        <input type="text" id="nilai" />
+        <button id="cekNilai">Nilai</button>
+
+    </div>
+</body>
+</html>

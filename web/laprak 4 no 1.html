@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Komentar Ulang Tahun</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+        }
+        .container {
+            margin: 50px auto;
+            border: 2px solid rgb(0, 0, 0);
+            background-color: rgba(0, 221, 255, 0.943);
+            width: 300px;
+            padding: 30px;
+            border-radius: 5px;
+        }
+        .container h3 {
+            margin: 0 0 10px 0;
+        }
+        #pesanMengetik { 
+            color: rgb(0, 0, 0); 
+            text-align: left; 
+        } 
+        #pesanHasil { 
+            color: #000000;
+            text-align: left;
+            font-weight: bold;
+        }
+        button {
+            float: left; 
+            padding: 5px 10px; 
+            background-color: #5cb85c; 
+            color: white; 
+            border: none; 
+            border-radius: 3px;
+        }
+        input {
+            width: 100%; 
+            padding: 5px; 
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3>Lana Sedang Berulang Tahun</h3>
+        <p id="pesanHasil"></p> <!-- Teks hasil komentar -->
+        <input type="text" id="komentar" placeholder="Komentar.." oninput="tampilkanPesanMengetik()">
+        <p id="pesanMengetik"></p> <!-- Pesan mengetik di bawah input field -->
+        <button onclick="kirimKomentar()">Komentar</button>
+    </div>
+
+    <script>
+        function tampilkanPesanMengetik() {
+            document.getElementById('pesanMengetik').textContent = "Anda Sedang Mengetik...";
+        }
+
+        function kirimKomentar() {
+            let komentar = document.getElementById('komentar').value;
+            document.getElementById('pesanHasil').textContent = "Fajri : " + komentar;
+            document.getElementById('pesanMengetik').textContent = ""; 
+        }
+    </script>
+</body>
+</html>

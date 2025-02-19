@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Papan Catur</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #000; /* Warna latar belakang hitam */
+            margin: 0;
+        }
+        .chess-container {
+            padding: 10px;
+            background-color: #fff; /* Lapisan border putih luar */
+            border: 10px solid black; /* Border hitam */
+            box-shadow: 0 0 10px #000;
+        }
+        #chessboard {
+            display: grid;
+            grid-template-columns: repeat(8, 50px); /* 8 kolom */
+            grid-template-rows: repeat(8, 50px); /* 8 baris */
+            border: 5px solid white; /* Border putih di dalam papan */
+        }
+        .cell {
+            width: 50px;
+            height: 50px;
+        }
+        .black {
+            background-color: black;
+        }
+        .white {
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="chess-container">
+        <div id="chessboard"></div>
+    </div>
+
+    <script>
+        function createChessboard() {
+            const chessboard = document.getElementById('chessboard');
+
+            for (let row = 0; row < 8; row++) {
+                for (let col = 0; col < 8; col++) {
+                    // Membuat div untuk setiap kotak
+                    const cell = document.createElement('div');
+                    cell.classList.add('cell');
+
+                    // Menentukan warna berdasarkan posisi
+                    if ((row + col) % 2 === 0) {
+                        cell.classList.add('white');
+                    } else {
+                        cell.classList.add('black');
+                    }
+
+                    // Menambahkan kotak ke papan catur
+                    chessboard.appendChild(cell);
+                }
+            }
+        }
+
+        // Panggil fungsi untuk membuat papan catur
+        createChessboard();
+    </script>
+</body>
+</html>
